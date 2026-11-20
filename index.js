@@ -4,8 +4,9 @@ const bodyParser = require("body-parser");
 const randomToken = require('random-token');
 const cors = require("cors");
 const app = express();
-const port = 8081;
+const port = 8800;
 
+app.use('/', express.static('client'));
 app.use(bodyParser.json());
 app.use(cors()); 
 
@@ -122,7 +123,7 @@ app.post('/post', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Cobalt server running at http://127.0.0.1:${port}\nCobalt client URL: http://127.0.0.1:8080`);
+    console.log(`Cobalt client running at: http://127.0.0.1:8800`);
 });
 
 
